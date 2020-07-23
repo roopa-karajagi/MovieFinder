@@ -22,7 +22,7 @@ class About extends Component {
            MID:MID
        })
     axios
-     .get(`http://www.omdbapi.com/?apikey=b9bd48a6&i=${MID}&type=movie`)
+     .get(`https://www.omdbapi.com/?apikey=b9bd48a6&i=${MID}&type=movie`)
      .then(response=>{
          console.log(response);
          this.setState({
