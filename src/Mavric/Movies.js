@@ -23,7 +23,7 @@ class Movies extends Component {
   componentDidMount() {
     const apiKey = "b9bd48a6";
     console.log(apiKey);
-    let Url = `http://www.omdbapi.com/?apikey=${apiKey}&s=batman&type=movie`;
+    let Url = `https://www.omdbapi.com/?apikey=${apiKey}&s=batman&type=movie`;
     fetch(Url)
       .then((response) => response.json())
       .then((data) => {
@@ -38,7 +38,7 @@ class Movies extends Component {
     event.preventDefault();
     axios
       .get(
-        `http://www.omdbapi.com/?apikey=${apiKey}&s=${this.state.Title}&type=movie&page=${this.state.currentPage}`
+        `https://www.omdbapi.com/?apikey=${apiKey}&s=${this.state.Title}&type=movie&page=${this.state.currentPage}`
       )
       .then((response) => {
         console.log(response)
@@ -69,7 +69,7 @@ class Movies extends Component {
   getUser =()=>{
     axios
     .get(
-      `http://www.omdbapi.com/?apikey=${apiKey}&s=${this.state.Title}&type=movie&page=${this.state.currentPage}`
+      `https://www.omdbapi.com/?apikey=${apiKey}&s=${this.state.Title}&type=movie&page=${this.state.currentPage}`
     )
     .then((response) => {
       console.log(response)
