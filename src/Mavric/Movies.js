@@ -107,7 +107,7 @@ class Movies extends Component {
     // console.log(movielist , Title);
     return (
       <div className="main">
-        <h1> Movies Search</h1>
+        <h1 style={{color:"#fff"}}> Movies Search</h1>
         <form autoComplete="on" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <input
