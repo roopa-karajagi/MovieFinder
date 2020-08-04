@@ -1,16 +1,28 @@
 import React from "react"
 import './Movie.css'
-import { NavLink ,withRouter} from "react-router-dom"
+import {withRouter, Link} from "react-router-dom"
 
- const Nav = () => {
+const isActive=(history,path)=>{
+    // debugger
+    if(history.location.pathname===path){
+        return { color:'#FF9900'
+        }
+    }
+    else{
+        return { color:'#ffffff'
+        }
+    }
+}
+
+ const Nav = ({history}) => {
     return (
             <div>
                 <ul className="nav nav-tabs bg-secondary">
                     <li className="nav-item">
-                        <NavLink activeStyle={{borderBottom:"2px solid #fff"}} className="nav-link " to="/MovieList">Movies</NavLink>
+                        <Link style={isActive(history,'/MovieList')} className="nav-link " to="/MovieList">Movies</Link>
                     </li>
                     <li className="nav-item">
-                        <NavLink  className="nav-link" to="/MovieDetails/:id">About</NavLink>
+                        <Link  style={isActive(history,'/MovieDetails/:id')}className="nav-link " to="/MovieDetails/:id">Movie Details</Link>
                     </li>
                 </ul>
             </div>

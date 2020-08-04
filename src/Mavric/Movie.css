@@ -44,6 +44,10 @@ body{
     list-style-type: none;
 }
 
+ /* .hide{
+    display:none
+} */
+
 /* load */
 
 .noload {

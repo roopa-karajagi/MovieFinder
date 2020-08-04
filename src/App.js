@@ -14,7 +14,7 @@ function App() {
       <Switch>
       <ErrorBoundary>
         <Route  exact path="/MovieList" component={Movies}></Route>
-        <Route  path="/MovieDetails" component={About}></Route>
+        <Route  path="/MovieDetails/:id" component={About}></Route>
         </ErrorBoundary>
       </Switch>
       </Fragment>

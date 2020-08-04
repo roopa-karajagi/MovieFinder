@@ -1,12 +1,12 @@
 // import 'dotenv'
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import axios from "axios";
 import "./Movie.css";
 import MovieList from "./MovieList/MovieList";
 // import About from "./About";
 
 const apiKey = "b9bd48a6";
-class Movies extends Component {
+class Movies extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -22,7 +22,7 @@ class Movies extends Component {
   //By Default
   componentDidMount() {
     const apiKey = "b9bd48a6";
-    console.log(apiKey);
+    // console.log(apiKey);
     let Url = `https://www.omdbapi.com/?apikey=${apiKey}&s=batman&type=movie`;
     fetch(Url)
       .then((response) => response.json())
@@ -53,11 +53,16 @@ class Movies extends Component {
   SelectedMovie = (id) => {
     //   console.log(event);
     console.log(id);
-    this.props.history.push(`/MovieDetails/${id}`, [id]);
+    // this.props.history.push(`/MovieDetails/${id}`, [id]);
+    this.props.history.push({
+      pathname:`/MovieDetails/${id}`,
+      state:{
+        id:id
+    }})
   };
 
   handleChange = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     this.setState({
       Title  : e.target.value,
       totalResults : 0,
